@@ -31,6 +31,16 @@
     <%= f.label :cost %><br>
     <%= f.text_field :cost %>
   </div>
+  
+  <div class="field">
+    Party event?<br>
+    <%= check_box_tag 'booking[party]', 'party' %>
+  </div>
+ <div class="field">
+    Team build event?<br>
+    <%= check_box_tag 'booking[teambuild]', 'teambuild' %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

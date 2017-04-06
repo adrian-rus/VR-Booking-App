@@ -1,4 +1,7 @@
+require 'booking_decorator'
 class BookingsController < ApplicationController
+  
+  #request authentication or registration
   before_filter :authenticate_user!
   before_filter :ensure_admin, :only => [:edit, :destroy]
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
@@ -32,7 +35,22 @@ class BookingsController < ApplicationController
   # POST /bookings.json
   def create
     @booking = Booking.new(booking_params)
-
+    
+    #@booking.date = params[:booking][:date]
+    #@booking.time = params[:booking][:time]
+   
+    myBooking = BasicBooking.new(1, 100)
+    if params[:booking][:party].to_s.length > 0 then
+      myBooking = PartyDecorator.new(myBooking)
+    end
+    
+    if params[:booking][:teambuild].to_s.length > 0 then
+      myBooking = TeamBuildDecorator.new(myBooking)
+    end
+    
+    @booking.cost = myBooking.cost
+    @booking.description = myBooking.details
+    
     respond_to do |format|
       if @booking.save
         format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
