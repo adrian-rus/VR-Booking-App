@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   # GET /bookings

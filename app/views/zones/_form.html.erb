@@ -1,7 +1,11 @@
 <%= form_for([@booking, @zone]) do |f| %>
+  
   <% if @zone.errors.any? %>
+  
     <div id="error_explanation">
-      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this zone from being saved:</h2>
+        
+      <h2><%= pluralize(@review.errors.count, "error") %> 
+      prohibited this zone from being saved:</h2>
 
       <ul>
       <% @zone.errors.full_messages.each do |message| %>
