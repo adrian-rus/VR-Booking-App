@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @booking.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @booking.time %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @booking.duration %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @booking.description %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @booking.cost %>
+</p>
+
+<h2> Zones booked: </h2>
+<% @booking.zones.each do |zone| %>
+  <p>
+  <b> Zone details: </b>
+    <%= zone.name %> |
+    <%= zone.description %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit Booking', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %> |
+<%= link_to 'Show Zones', booking_zones_path(@booking) %>

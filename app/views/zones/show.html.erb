@@ -1,0 +1,10 @@
+
+<h1> Zone in <%= @booking.id %></h1>
+<p>
+    <b> Zone details: </b>
+    <%= @zone.name %> |
+    <%= @zone.description %>
+</p>
+
+<%= link_to 'Edit', edit_booking_zone_path(@booking, @zone) %> |
+<%= link_to 'Back', booking_zones_path(@booking) %>
