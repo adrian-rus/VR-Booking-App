@@ -1,4 +1,8 @@
 source 'https://rubygems.org'
+
+#adding bootstrap
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 # adding authentication
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

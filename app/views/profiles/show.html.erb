@@ -1,4 +1,11 @@
-<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-sm-4">
+     <%= link_to image_tag("avatar.png", alt: "default avatar", class: 'img-responsive img-circle') %>
+  </div>
+  <div class="col-sm-8">
+    <br>
+    <br>
 
 <p>
   <strong>First name:</strong>
@@ -21,5 +28,7 @@
   <%= @profile.lastname %>
 </p>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<%= link_to 'Edit Profile', edit_profile_path(@profile), class:'btn btn-warning'%>
+</div>
+</div>
+
