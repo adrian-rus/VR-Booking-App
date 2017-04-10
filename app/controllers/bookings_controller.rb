@@ -1,10 +1,11 @@
+require "logger"
 require 'booking_decorator'
 class BookingsController < ApplicationController
   
   #request authentication or registration
   before_filter :authenticate_user!
   before_filter :ensure_admin, :only => [:edit, :destroy]
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  # before_action :set_booking, only: [:show, :edit, :update, :destroy]
   
   def ensure_admin
     unless current_user && current_user.admin?
@@ -34,22 +35,34 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
-    @booking = Booking.new(booking_params)
-    
-    #@booking.date = params[:booking][:date]
-    #@booking.time = params[:booking][:time]
+    @booking = Booking.new()
+    @booking.date = params[:booking][:date]
+    @booking.time = params[:booking][:time]
    
-    myBooking = BasicBooking.new(1, 100)
-    if params[:booking][:party].to_s.length > 0 then
-      myBooking = PartyDecorator.new(myBooking)
+    myBooking = BasicBooking.new(100, 1)
+    
+    if params[:booking][:actionZone].to_s.length > 0 then
+      myBooking = ActionZoneDecorator.new(myBooking)
     end
     
-    if params[:booking][:teambuild].to_s.length > 0 then
-      myBooking = TeamBuildDecorator.new(myBooking)
+    if params[:booking][:adventure].to_s.length > 0 then
+      myBooking = AdventureZoneDecorator.new(myBooking)
+    end
+    
+    if params[:booking][:multiplayer].to_s.length > 0 then
+      myBooking = MultiplayerZoneDecorator.new(myBooking)
+    end
+    
+    if params[:booking][:sports].to_s.length > 0 then
+      myBooking = SportsDecorator.new(myBooking)
     end
     
     @booking.cost = myBooking.cost
     @booking.description = myBooking.details
+    
+    # retrieve the intance of Logger class
+    log = Logger.instance
+    log.logInformation("A new booking has been created: " + @booking.description)
     
     respond_to do |format|
       if @booking.save
@@ -65,8 +78,40 @@ class BookingsController < ApplicationController
   # PATCH/PUT /bookings/1
   # PATCH/PUT /bookings/1.json
   def update
+    
+    @booking.date = params[:booking][:date]
+    @booking.time = params[:booking][:time]
+
+    myBooking = BasicBooking.new(100, 1)
+    
+    if params[:booking][:actionZone].to_s.length > 0 then
+      myBooking = ActionZoneDecorator.new(myBooking)
+    end
+    
+    if params[:booking][:adventure].to_s.length > 0 then
+      myBooking = AdventureZoneDecorator.new(myBooking)
+    end
+    
+    if params[:booking][:multiplayer].to_s.length > 0 then
+      myBooking = MultiplayerZoneDecorator.new(myBooking)
+    end
+    
+    if params[:booking][:sports].to_s.length > 0 then
+      myBooking = SportsDecorator.new(myBooking)
+    end
+    
+    @booking.cost = myBooking.cost
+    @booking.description = myBooking.details
+    
+    updated_information = {
+      'date' => @booking.date,
+      'time' => @booking.time,
+      'cost' => @booking.cost,
+      'description' => @booking.description,
+      'duration' => @booking.duration
+    }
     respond_to do |format|
-      if @booking.update(booking_params)
+      if @booking.update(updated_information)
         format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
         format.json { render :show, status: :ok, location: @booking }
       else
@@ -81,7 +126,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     respond_to do |format|
-      format.html { redirect_to bookings_url, notice: 'Booking was successfully destroyed.' }
+      format.html { redirect_to bookings_url, notice: 'Booking was successfully cancelled.' }
       format.json { head :no_content }
     end
   end

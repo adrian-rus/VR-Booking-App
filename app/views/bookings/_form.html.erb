@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field form-group">
+  <div class="field form-group row">
     <%= f.label :date, class: 'col-sm-2 control-label'%>
     <div class="col-sm-10">
       <%= f.date_select :date, class: 'form-control' %>
     </div>
   </div>
   
-  <div class="field form-group">
+  <div class="field form-group row">
     <%= f.label :time, class:'col-sm-2 control-label' %>
     <div class="col-sm-10">
         <%= f.time_select :time, class: 'form-control' %>
@@ -47,17 +47,27 @@
     </div>
   </div>
   
-  <div class="field form-group">
-    Party event?
-    <%= check_box_tag 'booking[party]', 'party' %>
-  </div>
- <div class="field form-group">
-    Team build event?
-    
-    <%= check_box_tag 'booking[teambuild]', 'teambuild' %>
+  <div class="field form-group col-sm-offset-2 col-sm-10">
+    Zone A - Action
+    <%= check_box_tag 'booking[actionZone]', 'actionZone' %>
   </div>
   
-  <div class="actions form-group">
+ <div class="field form-group col-sm-offset-2 col-sm-10">
+    Zone B - Adventure
+    <%= check_box_tag 'booking[adventure]', 'adventure' %>
+  </div>
+  
+  <div class="field form-group col-sm-offset-2 col-sm-10">
+    Zone C - Multiplayer
+    <%= check_box_tag 'booking[multiplayer]', 'multiplayer' %>
+  </div>
+  
+  <div class="field form-group col-sm-offset-2 col-sm-10">
+    Zone D - Sports
+    <%= check_box_tag 'booking[sports]', 'sports' %>
+  </div>
+  
+  <div class="actions">
     <div class="col-sm-offset-2 col-sm-10">
     <%= f.submit %>
     </div>
