@@ -2,7 +2,7 @@
 
 <h1>Listing Bookings</h1>
 
-<table>
+<table class="table table-responsive table-hover">
   <thead>
     <tr>
       <th>Date</th>
@@ -22,14 +22,15 @@
         <td><%= booking.duration %> hour/s</td>
         <td><%= booking.description %></td>
         <td><%= booking.cost %></td>
-        <td><%= link_to 'Show booking', booking %></td>
-        <td><%= link_to 'Amend booking', edit_booking_path(booking) %></td>
-        <td><%= link_to 'Cancel booking', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show booking', booking, class: 'btn btn-info' %></td>
+        <td><%= link_to 'Amend booking', edit_booking_path(booking), class: 'btn btn-warning'%></td>
+        <td><%= link_to 'Cancel booking', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'%></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+<%= link_to 'New Booking', new_booking_path, class:'btn btn-success' %>
 <br>
 
-<%= link_to 'New Booking', new_booking_path %>
+

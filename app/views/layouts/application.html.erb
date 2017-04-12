@@ -5,54 +5,26 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
-<div id="wrapper">
+  <%= render 'shared/navbar' %>
+  <%= render 'shared/logindetails' %>
+
   
-  <header>
-    
-    <% if user_signed_in? %>
-    <%= link_to image_tag("logo.png", alt: "VR logo"),
-    {:controller => 'home', :action => 'index'},
-    {:class => 'websiteLogo'} %>
-    
-    <%= link_to 'VR Arcade', {:controller => 'home', :action => 'index'},
-    {:class => 'websiteTitle'} %>
-    <% end %>
-    
-  </header>
-  
-  
-  <div>
-    <% if user_signed_in? %>
-    <div>Signed in as... <%= current_user.email %>
-      (<%= link_to 'Sign out', destroy_user_session_path,
-        :method => :delete%>)
-    </div>
-  <% else %>
-    <%= link_to 'Register', new_user_registration_path %> or
-    <%= link_to 'Sign in', new_user_session_path %>
-  <% end %>
+<div class="container-fluid">
+  <div class="row text-center">
+    <p class="notice bg-success"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </div>
   
-  <nav id="horzNav">
-    <% if user_signed_in? %>
-    <p>
-      <%= link_to 'Home', {:controller => 'home', :action => 'index'} %>
-      <%= link_to 'Bookings', {:controller => 'bookings', :action => 'index'} %>
-      <%= link_to 'Profile', {:controller => 'profiles', :action => 'signedinuserprofile'} %>
-    </p>
-    <% end %>
-  </nav>
-  
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-  <main id="content">
-  <%= yield %>
+  <main class="container">
+    <%= yield %>
   </main>
   
-  </div>
-  
+</div>
+<br>
+<br>
+  <%= render 'shared/footer' %>
 </body>
 </html>

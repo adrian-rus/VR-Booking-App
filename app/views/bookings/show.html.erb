@@ -25,6 +25,8 @@
   <%= @booking.cost %>
 </p>
 
+<%= link_to 'Edit Booking', edit_booking_path(@booking), class: 'btn btn-warning'%>
+
 <h3> Zones booked:  </h3>
 <% @booking.zones.each do |zone| %>
   <p class="<%= cycle('list_line_odd', 'list_line_even')%>">
@@ -34,6 +36,7 @@
   </p>
 <% end %>
 
-<%= link_to 'Edit Booking', edit_booking_path(@booking) %> |
-<%= link_to 'Back to all bookings', bookings_path %> |
-<%= link_to 'Show Zones', booking_zones_path(@booking) %>
+<%= link_to 'Show Zones', booking_zones_path(@booking), class: 'btn btn-info' %>
+<br>
+<br>
+<%= link_to '<< Back to all bookings', bookings_path, class: 'btn btn-success' %>
