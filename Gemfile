@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 # adding authentication
 gem 'devise'
+#adding the observer design pattern
+gem 'rails-observers'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record

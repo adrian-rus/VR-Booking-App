@@ -18,7 +18,7 @@
     <% @bookings.each do |booking| %>
       <tr class="<%= cycle('list_line_odd','list_line_even')%>">
         <td><%= booking.date %></td>
-        <td><%= booking.time.strftime("%I:%M %P") %></td>
+        <td><%= booking.time %></td>
         <td><%= booking.duration %> hour/s</td>
         <td><%= booking.description %></td>
         <td><%= booking.cost %></td>

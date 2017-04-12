@@ -35,10 +35,10 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new()
     
-    #@booking.date = params[:booking][:date]
-    #@booking.time = params[:booking][:time]
+    @booking.date = params[:booking][:date]
+    @booking.time = params[:booking][:time]
    
     myBooking = BasicBooking.new(1, 100)
     if params[:booking][:party].to_s.length > 0 then
@@ -69,8 +69,31 @@ class BookingsController < ApplicationController
   # PATCH/PUT /bookings/1
   # PATCH/PUT /bookings/1.json
   def update
+    
+    @booking.date = params[:booking][:date]
+    @booking.time = params[:booking][:time]
+
+     myBooking = BasicBooking.new(1, 100)
+    if params[:booking][:party].to_s.length > 0 then
+      myBooking = PartyDecorator.new(myBooking)
+    end
+    
+    if params[:booking][:teambuild].to_s.length > 0 then
+      myBooking = TeamBuildDecorator.new(myBooking)
+    end
+    
+    @booking.cost = myBooking.cost
+    @booking.description = myBooking.details
+    
+    updated_information = {
+      'date' => @booking.date,
+      'time' => @booking.time,
+      'cost' => @booking.cost,
+      'description' => @booking.description,
+      'duration' => @booking.duration
+    }
     respond_to do |format|
-      if @booking.update(booking_params)
+      if @booking.update(updated_information)
         format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
         format.json { render :show, status: :ok, location: @booking }
       else

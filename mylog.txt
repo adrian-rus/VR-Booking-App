@@ -1,3 +1,16 @@
 A new booking has been createdwe add in a guide to enhance Leadership and Teamwork related tasks: 500. basic booking; is set to: 1hour - at a cost of: 100
 A new booking has been created: 2017-04-12we add in a guide to enhance Leadership and Teamwork related tasks: 500. we add in extra booze for extra fun: 200. basic booking; is set to: 1hour - at a cost of: 100
 A new booking has been created on: 2017-04-12we add in extra booze for extra fun: 200. basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on: 2017-04-12we add in extra booze for extra fun: 200. basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on: 2017-04-12we add in a guide to enhance Leadership and Teamwork related tasks: 500. basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on: basic booking; is set to: 1hour - at a cost of: 100
+############### BookingObserver Demo:#
++++ BookingObserver: The booking for   has been updated. cost 600.0
+##############################
+A new booking has been created on: we add in extra booze for extra fun: 200. basic booking; is set to: 1hour - at a cost of: 100
+############### BookingObserver Demo:#
++++ BookingObserver: The booking for   has been updated. cost 100.0
+##############################
+############### BookingObserver Demo:#
++++ BookingObserver: The booking for   has been updated. cost 600.0
+##############################

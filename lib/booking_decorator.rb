@@ -66,6 +66,3 @@ class TeamBuildDecorator < BookingDecorator
     end
     
 end # ends the TeamBuildDecorator class
-
-
-
