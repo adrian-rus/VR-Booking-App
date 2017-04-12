@@ -14,3 +14,13 @@ A new booking has been created on: we add in extra booze for extra fun: 200. bas
 ############### BookingObserver Demo:#
 +++ BookingObserver: The booking for   has been updated. cost 600.0
 ##############################
+A new booking has been created on: we add in a guide to enhance Leadership and Teamwork related tasks: 500. basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on: we add in extra booze for extra fun: 200. basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on:  Teamwork and Leadership are key to the games here.  extra cost: 500.  This is going to be the most immersive party you have been at. extra cost: 200. basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on:  This is going to be the most immersive party you have been at. extra cost: 200. basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on:  This is going to be the most immersive party you have been at. extra cost: 200. basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on:  This is going to be the most immersive party you have been at. extra cost: 200. basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on:  Teamwork and Leadership are key to the games here.  extra cost: 500. basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on:  This is going to be the most immersive party you have been at. extra cost: 200. basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on: basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on: basic booking; is set to: 1hour - at a cost of: 100

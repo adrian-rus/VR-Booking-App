@@ -35,11 +35,17 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
+    #debugging
+    puts "debug +++++++++++++++++++++++++++++++ "
+    puts params.inspect
+    puts "debug END --------------------------- "
+    
     @booking = Booking.new()
     
     @booking.date = params[:booking][:date]
     @booking.time = params[:booking][:time]
    
+   # create an instance of a BasicBooking
     myBooking = BasicBooking.new(1, 100)
     if params[:booking][:party].to_s.length > 0 then
       myBooking = PartyDecorator.new(myBooking)
@@ -73,7 +79,7 @@ class BookingsController < ApplicationController
     @booking.date = params[:booking][:date]
     @booking.time = params[:booking][:time]
 
-     myBooking = BasicBooking.new(1, 100)
+    myBooking = BasicBooking.new(1, 100)
     if params[:booking][:party].to_s.length > 0 then
       myBooking = PartyDecorator.new(myBooking)
     end
@@ -92,6 +98,7 @@ class BookingsController < ApplicationController
       'description' => @booking.description,
       'duration' => @booking.duration
     }
+    
     respond_to do |format|
       if @booking.update(updated_information)
         format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }

@@ -11,7 +11,7 @@ class BasicBooking
         return @duration
     end
     
-    def cost 
+    def cost
         return @cost
     end
     
@@ -40,7 +40,7 @@ class BookingDecorator < BasicBooking
     
     # override the details method to include the description of the extra feature
     def details
-        return  @description + ": " + "#{@extra_cost}" + ". " + @basic_booking.details
+        return  @description + " extra cost: " + "#{@extra_cost}" + ". " + @basic_booking.details
     end
     
 end # ends the BookingDecorator class
@@ -51,7 +51,7 @@ class PartyDecorator < BookingDecorator
     def initialize(basic_booking)
         super(basic_booking)
         @extra_cost = 200
-        @description = "we add in extra booze for extra fun"
+        @description = " This is going to be the most immersive party you have been at."
     end
     
 end # ends the PartyDecorator class
@@ -62,7 +62,7 @@ class TeamBuildDecorator < BookingDecorator
     def initialize(basic_booking)
         super(basic_booking)
         @extra_cost = 500
-        @description = "we add in a guide to enhance Leadership and Teamwork related tasks"
+        @description = " Teamwork and Leadership are key to the games here. "
     end
     
 end # ends the TeamBuildDecorator class

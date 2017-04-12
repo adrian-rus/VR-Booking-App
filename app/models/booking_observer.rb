@@ -5,7 +5,7 @@ class BookingObserver < ActiveRecord::Observer
         @logger = MyLogger.instance
     # use the logger to log/record a message about the updated booking
         @logger.logInformation("############### BookingObserver Demo:#")
-        @logger.logInformation("+++ BookingObserver: The booking for #{record.date} #{record.time} has been updated. cost #{record.cost}")
+        @logger.logInformation("+++ BookingObserver: The booking for #{record.date.to_s} #{record.time.to_s} has been updated. The cost is now: #{record.cost}")
         @logger.logInformation("##############################")
     end
 end
