@@ -1,4 +1,5 @@
 require 'booking_decorator'
+require 'my_logger'
 class BookingsController < ApplicationController
   
   #request authentication or registration
@@ -50,6 +51,9 @@ class BookingsController < ApplicationController
     
     @booking.cost = myBooking.cost
     @booking.description = myBooking.details
+    
+    logger = MyLogger.instance
+    logger.logInformation("A new booking has been created on: " + @booking.date.to_s + @booking.description)
     
     respond_to do |format|
       if @booking.save
