@@ -3,9 +3,9 @@
 
 <h1>Listing Bookings</h1>
 
-<%= form_tag(bookings_path, :method => "get", class: "form-group") do %>
-  <%= text_field_tag :search, nil, :placeholder => "Search by Name of the Person", class: "field form-control"%>
-  <%= submit_tag "Search", class: "btn btn-info" %>
+<%= form_tag(bookings_path, :method => "get", class: "form-inline") do %>
+  <%= text_field_tag :search, nil, :placeholder => "Search by Name", class: "form-control"%>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 
 <table class="table table-responsive table-hover">
@@ -17,7 +17,7 @@
       <th>Duration</th>
       <th>Description</th>
       <th>Cost</th>
-      <th colspan="7"></th>
+      <th colspan="9"></th>
     </tr>
   </thead>
 
@@ -29,7 +29,7 @@
         <td><%= booking.time.strftime("%H:%M %p") %></td>
         <td><%= booking.duration %> hour/s</td>
         <td><%= booking.description %></td>
-        <td><%= booking.cost %></td>
+        <td>€<%= booking.cost %></td>
         <td><%= link_to 'Show booking', booking, class: 'btn btn-info' %></td>
         <td><%= link_to 'Amend booking', edit_booking_path(booking), class: 'btn btn-warning'%></td>
         <td><%= link_to 'Cancel booking', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'%></td>

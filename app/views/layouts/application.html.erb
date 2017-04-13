@@ -6,24 +6,22 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
-<body>
+<body class="bg-info">
   
   <%= render 'shared/navbar' %>
   <%= render 'shared/logindetails' %>
-  
-
-  <div class="row text-center">
+   <div class="text-center">
     <p class="notice bg-success"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   </div>
   
   
-    <%= yield %>
- 
-  
-<br>
+    
+        <%= yield %>
 <br>
   <%= render 'shared/footer' %>
+  
 </body>
 </html>

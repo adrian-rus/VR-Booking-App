@@ -54,19 +54,23 @@
     </div>
   </div>
   
-  <div class="field form-group col-sm-offset-2 col-sm-10">
-    First person shooter fan? Check this button.
+  <div class="col-sm-offset-2 col-sm-10">
+    <label>
     <%= check_box_tag 'booking[fps]', 'fps' %>
+    First person shooter fan? Check this button.
+    </label>
   </div>
   
- <div class="field form-group col-sm-offset-2 col-sm-10">
-    Teambuild?
+ <div class="col-sm-offset-2 col-sm-10">
+    <label>
     <%= check_box_tag 'booking[teambuild]', 'teambuild' %>
+    Teambuild?
+    </label>
   </div>
   
   <div class="actions">
     <div class="col-sm-offset-2 col-sm-10">
-    <%= f.submit %>
+    <%= f.submit "Submit", class: "btn btn-primary"%>
     </div>
   </div>
 <% end %>

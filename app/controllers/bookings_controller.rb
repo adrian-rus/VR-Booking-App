@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
   
   #request authentication or registration
   before_filter :authenticate_user!
-  before_filter :ensure_admin, :only => [:edit, :destroy]
+  before_filter :ensure_admin, :only => [:destroy]
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
   
   def ensure_admin
@@ -123,7 +123,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     respond_to do |format|
-      format.html { redirect_to bookings_url, notice: 'Booking was successfully destroyed.' }
+      format.html { redirect_to bookings_url, notice: 'Booking was successfully cancelled.' }
       format.json { head :no_content }
     end
   end

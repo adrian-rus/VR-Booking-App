@@ -5,6 +5,8 @@
 	        <span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
+		
+		<%= link_to image_tag("logo.png", alt: "VR logo", class:'navbar-brand img-responsive') %>
 		<a class="navbar-brand" href="/">VR World</a>
 	</div>
 	<div class="collapse navbar-collapse" id="myCollapsingList">
@@ -15,10 +17,21 @@
 			<li>
 				<a href="/bookings">Bookings</a>
 			</li>
+			
+			<!-- displaying the profile link only if the user is logged in -->
+			<% if user_signed_in? %>
 			<li>
-				<a href="/signedinuserprofile">Profile</a>
+				<a href="/signedinuserprofile">My Profile</a>
 			</li>
-
+			<% end %>
+			
+			<!-- displaying a link to all profiles if user is admin -->
+			<% if user_signed_in? && current_user.admin?%>
+			<li>
+				<a href="/profiles">All Profiles</a>
+			</li>
+			
+			<% end %>
 		</ul>
 	</div>
 
