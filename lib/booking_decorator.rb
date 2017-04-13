@@ -3,7 +3,7 @@ class BasicBooking
     def initialize(d, c)
         @duration = d
         @cost = c
-        @description = "basic booking"
+        @description = " basic booking"
     end
     
     # getter methods

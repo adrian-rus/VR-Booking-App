@@ -40,12 +40,12 @@ class BookingsController < ApplicationController
     puts params.inspect
     puts "debug END --------------------------- "
     
-    @booking = Booking.new()
+    @booking = Booking.new(booking_params)
     
-    @booking.date = params[:booking][:date]
-    @booking.time = params[:booking][:time]
+    # @booking.date = params[:booking][:date]
+    # @booking.time = params[:booking][:time]
    
-   # create an instance of a BasicBooking
+    # create an instance of a BasicBooking
     myBooking = BasicBooking.new(1, 100)
     if params[:booking][:party].to_s.length > 0 then
       myBooking = PartyDecorator.new(myBooking)
@@ -76,10 +76,10 @@ class BookingsController < ApplicationController
   # PATCH/PUT /bookings/1.json
   def update
     
-    @booking.date = params[:booking][:date]
-    @booking.time = params[:booking][:time]
+    #@booking.date = params[:booking][:date]
+    #@booking.time = params[:booking][:time]
 
-    myBooking = BasicBooking.new(1, 100)
+    myBooking = BasicBooking.new(1,100)
     if params[:booking][:party].to_s.length > 0 then
       myBooking = PartyDecorator.new(myBooking)
     end

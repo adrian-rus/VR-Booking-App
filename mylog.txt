@@ -24,3 +24,19 @@ A new booking has been created on:  Teamwork and Leadership are key to the games
 A new booking has been created on:  This is going to be the most immersive party you have been at. extra cost: 200. basic booking; is set to: 1hour - at a cost of: 100
 A new booking has been created on: basic booking; is set to: 1hour - at a cost of: 100
 A new booking has been created on: basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on:  This is going to be the most immersive party you have been at. extra cost: 200. basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on: basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on: basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on:  This is going to be the most immersive party you have been at. extra cost: 200. basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on:  Teamwork and Leadership are key to the games here.  extra cost: 500. basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on: basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on: 2017-04-13 This is going to be the most immersive party you have been at. extra cost: 200. basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on: 2017-04-13basic booking; is set to: 1hour - at a cost of: 100
+############### BookingObserver Demo:#
++++ BookingObserver: The booking for 2017-04-13 2000-01-01 13:49:00 UTC has been updated. The cost is now: 100.0
+##############################
+############### BookingObserver Demo:#
++++ BookingObserver: The booking for 2017-04-13 2000-01-01 13:49:00 UTC has been updated. The cost is now: 100.0
+##############################
+A new booking has been created on: 2017-04-13 This is going to be the most immersive party you have been at. extra cost: 200. basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on:  This is going to be the most immersive party you have been at. extra cost: 200. basic booking; is set to: 1hour - at a cost of: 100
