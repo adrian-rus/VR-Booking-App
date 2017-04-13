@@ -47,11 +47,11 @@ end # ends the BookingDecorator class
 
 
 # a concrete decorator --  define an extra feature
-class PartyDecorator < BookingDecorator
+class FpsDecorator < BookingDecorator
     def initialize(basic_booking)
         super(basic_booking)
         @extra_cost = 200
-        @description = " This is going to be the most immersive party you have been at."
+        @description = " This is going to be the most immersive FPS you have ever experienced."
     end
     
 end # ends the PartyDecorator class
@@ -61,7 +61,7 @@ end # ends the PartyDecorator class
 class TeamBuildDecorator < BookingDecorator
     def initialize(basic_booking)
         super(basic_booking)
-        @extra_cost = 500
+        @extra_cost = 400
         @description = " Teamwork and Leadership are key to the games here. "
     end
     

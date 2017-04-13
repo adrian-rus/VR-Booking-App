@@ -16,6 +16,12 @@ class BookingsController < ApplicationController
   # GET /bookings.json
   def index
     @bookings = Booking.all
+    if params[:search]
+      @bookings = Booking.search(params[:search])
+      @bookings = @bookings.order("created_at ASC")
+    else
+      @bookings = @bookings.order("created_at DESC")
+    end
   end
 
   # GET /bookings/1
@@ -48,8 +54,8 @@ class BookingsController < ApplicationController
    
     # create an instance of a BasicBooking
     myBooking = BasicBooking.new(1, 100)
-    if params[:booking][:party].to_s.length > 0 then
-      myBooking = PartyDecorator.new(myBooking)
+    if params[:booking][:fps].to_s.length > 0 then
+      myBooking = FpsDecorator.new(myBooking)
     end
     
     if params[:booking][:teambuild].to_s.length > 0 then
@@ -81,8 +87,8 @@ class BookingsController < ApplicationController
     #@booking.time = params[:booking][:time]
 
     myBooking = BasicBooking.new(1,100)
-    if params[:booking][:party].to_s.length > 0 then
-      myBooking = PartyDecorator.new(myBooking)
+    if params[:booking][:fps].to_s.length > 0 then
+      myBooking = FpsDecorator.new(myBooking)
     end
     
     if params[:booking][:teambuild].to_s.length > 0 then
