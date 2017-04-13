@@ -42,6 +42,7 @@ class BookingsController < ApplicationController
     
     @booking = Booking.new(booking_params)
     
+    @booking.name = params[:booking][:name]
     # @booking.date = params[:booking][:date]
     # @booking.time = params[:booking][:time]
    
@@ -92,6 +93,7 @@ class BookingsController < ApplicationController
     @booking.description = myBooking.details
     
     updated_information = {
+      'name' => @booking.name,
       'date' => @booking.date,
       'time' => @booking.time,
       'cost' => @booking.cost,

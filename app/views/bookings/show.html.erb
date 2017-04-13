@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Booking made by:</strong>
+  <%= @booking.name %>
+</p>
+
+<p>
   <strong>Date:</strong>
-  <%= @booking.date %>
+  <%= @booking.date.strftime("%A %d - %b - %Y") %>
 </p>
 
 <p>
   <strong>Time:</strong>
-  <%= @booking.time %>
+  <%= @booking.time.strftime("%H:%M %p") %>
 </p>
 
 <p>

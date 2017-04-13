@@ -5,20 +5,22 @@
 <table class="table table-responsive table-hover">
   <thead>
     <tr>
+      <th>Booking made by:</th>
       <th>Date</th>
       <th>Arrival Time</th>
       <th>Duration</th>
       <th>Description</th>
       <th>Cost</th>
-      <th colspan="6"></th>
+      <th colspan="7"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @bookings.each do |booking| %>
-      <tr class="<%= cycle('list_line_odd','list_line_even')%>">
-        <td><%= booking.date %></td>
-        <td><%= booking.time %></td>
+      <tr>
+        <td><%= booking.name %></td>
+        <td><%= booking.date.strftime("%A %d - %b - %Y") %></td>
+        <td><%= booking.time.strftime("%H:%M %p") %></td>
         <td><%= booking.duration %> hour/s</td>
         <td><%= booking.description %></td>
         <td><%= booking.cost %></td>
