@@ -21,8 +21,10 @@
         <td><%= profile.address %></td>
         
         <td><%= link_to 'Show', profile, class: 'btn btn-info'%></td>
+        <% if user_signed_in? && current_user.admin?%>
         <td><%= link_to 'Edit', edit_profile_path(profile), class: 'btn btn-warning' %></td>
-        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+        <td><%= link_to 'Delete', profile, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

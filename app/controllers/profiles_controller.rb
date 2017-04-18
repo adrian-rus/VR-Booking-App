@@ -1,8 +1,14 @@
 class ProfilesController < ApplicationController
   #request authentication or registration
   before_filter :authenticate_user!
-  before_filter :ensure_admin, :only => [:edit, :destroy]
+  before_filter :ensure_admin, :only => [:destroy]
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  
+  def ensure_admin
+    unless current_user && current_user.admin?
+    render :text => "Access Denied! You must be an Administrator. ", :status => :unauthorized
+    end
+  end
 
   def signedinuserprofile
     profile = Profile.find_by_user_id(current_user.id)

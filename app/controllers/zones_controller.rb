@@ -1,4 +1,12 @@
 class ZonesController < ApplicationController
+  before_filter :authenticate_user!
+  before_filter :ensure_admin, :only => [:destroy, :edit]
+  
+  def ensure_admin
+    unless current_user && current_user.admin?
+    render :text => "Access Denied! You must be an Administrator. ", :status => :unauthorized
+    end
+  end
   
   #GET /bookings/1/zones
   def index

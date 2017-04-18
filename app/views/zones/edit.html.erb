@@ -2,7 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', booking_zone_path(@booking, @zone)%> |
-<%= link_to 'Back', booking_zones_path(@booking) %>
+<%= link_to 'Show', booking_zone_path(@booking, @zone), class:'btn btn-info'%>
+<%= link_to '<< Back to all zones', booking_zones_path(@booking), class:'btn btn-success' %>
 
 

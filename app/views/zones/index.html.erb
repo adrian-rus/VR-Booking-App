@@ -1,6 +1,6 @@
-<h1>Listing Zones in Booking <%= @booking.id %> </h1>
+<h1>Listing Zones in Booking <%= @booking.id %> made by <%= @booking.name %>  </h1>
 
-<table>
+<table class="table table-responsive table-hover">
   <thead>
       <tr>
           <th> Zones details: </th>
@@ -17,9 +17,11 @@
       <tr class="<%=cycle('list_line_odd', 'list_line_even')%>">
         <td><%= zone.name %></td>
         <td><%= zone.description %></td>
-        <td><%= link_to 'Show', booking_zone_path(@booking, zone) %></td>
-        <td><%= link_to 'Edit', edit_booking_zone_path(@booking, zone) %></td>
-        <td><%= link_to 'Destroy', booking_zone_path(@booking, zone), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show More', booking_zone_path(@booking, zone), class: 'btn btn-info' %></td>
+        <% if user_signed_in? && current_user.admin?%>
+        <td><%= link_to 'Edit Zone', edit_booking_zone_path(@booking, zone),  class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Delete', booking_zone_path(@booking, zone), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -27,5 +29,5 @@
 
 <br>
 
-<%= link_to 'Add New Zone', new_booking_zone_path(@booking) %>
-<%= link_to 'Back to Booking', @booking %>
+<%= link_to 'Add New Zone', new_booking_zone_path(@booking), class:'btn btn-success' %>
+<%= link_to '<< Back to Booking', @booking, class: 'btn btn-warning'%>
