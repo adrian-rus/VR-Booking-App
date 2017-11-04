@@ -49,3 +49,5 @@ A new booking has been created on: 2017-04-13 This is going to be the most immer
 A new booking has been created on: 2017-04-13 This is going to be the most immersive FPS you have ever experienced. extra cost: 200.  basic booking; is set to: 1hour - at a cost of: 100
 A new booking has been created on: 2017-04-13 basic booking; is set to: 1hour - at a cost of: 100
 A new booking has been created on: 2017-04-13 basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on: 2017-04-19 Teamwork and Leadership are key to the games here.  extra cost: 400.  basic booking; is set to: 1hour - at a cost of: 100
+A new booking has been created on: 2017-04-20 This is going to be the most immersive FPS you have ever experienced. extra cost: 200.  basic booking; is set to: 1hour - at a cost of: 100

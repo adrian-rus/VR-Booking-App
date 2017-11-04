@@ -1,6 +1,6 @@
 class ZonesController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :ensure_admin, :only => [:destroy, :edit]
+  before_filter :ensure_admin, :only => [:destroy, :edit, :update]
   
   def ensure_admin
     unless current_user && current_user.admin?
